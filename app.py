@@ -148,15 +148,15 @@ def create_keyboard(list_of_buttons, type_):
         for button in list_of_buttons:
             keyboard.append(
                 {
-                    'text': button.item_name,
+                    'text': f'{button.item_name}\n',
                     'callback_data': f'/delete_item {button.item_name}'
                 }
             )
-    result = json.dumps( {
+    result = json.dumps({
         'inline_keyboard': [
             keyboard
         ]
-    } )
+    })
     return result
 
 
